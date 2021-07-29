@@ -39,7 +39,14 @@
             margin-bottom: 100px;
         }
     </style>
-
+    <!-- 新增開始 -->
+    <style type="text/css">
+	#contentTable{
+		table-layout:fixed; /* bootstrap-table設定colmuns中某列的寬度無效時，需要給整個表設定css屬性 */
+		word-break:break-all; word-wrap:break-all; /* 自動換行 */
+	}
+	</style>
+	<!-- 新增結束 -->
 </head>
 
 <body>
@@ -176,13 +183,13 @@
 <div align='center'>
 <h2><a style="color:red" href="<c:url value='/post_Page'  />">發表新文章</a></h2>
 <hr>
-<table class="table">
+<table class="table table-striped table-bordered table-condensed ">
 <thead>
 <tr>
-<th scope="col">子版</th>
-<th scope="col">類型</th>
-<th scope="col">文章列表</th>
-<th scope="col">更新時間</th>
+<th scope="col" style="width:80px;">子版</th>
+<th scope="col" style="width:80px;">類型</th>
+<th scope="col" style="width:160px;">文章列表</th>
+<th scope="col" style="width:80px;">更新時間</th>
 </tr>
 </thead>
 <c:forEach var='fb' items='${fbs1}'>

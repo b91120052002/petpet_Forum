@@ -207,9 +207,9 @@ function updateText(textId) {
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">請選類型</label>
+    <label for="exampleFormControlSelect2">請選類型</label>
     <select name="text_type"
-    	class="form-control" id="exampleFormControlSelect1">
+    	class="form-control" id="exampleFormControlSelect2">
       <option value="${fbs1.text_type}" selected >${fbs1.text_type}</option>	
       <option value="問題">問題</option>
       <option value="情報">情報</option>
