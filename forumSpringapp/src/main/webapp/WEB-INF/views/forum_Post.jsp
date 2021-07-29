@@ -5,6 +5,9 @@
 <html lang="en">
 
 <head>
+<!-- 新增開始 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 新增結束 -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,64 +168,45 @@
 
 	<!----------------------------------------------NEW!!Strat!!-------------------------------------------->
 
+<div align='center'>
+<h3>發表新文章</h3>
+<form action="<c:url value='/post'  />" method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">文章標題</label>
+    <input type="text" name="title" required 
+    	class="form-control" id="exampleFormControlInput1" placeholder="請輸入文章標題">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">請選子版</label>
+    <select name="text_sub"
+    	class="form-control" id="exampleFormControlSelect1">
+      <option value="貓咪">貓咪</option>
+      <option value="狗狗">狗狗</option>
+      <option value="其他">其他</option>
+      <option value="PET">PET</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">請選類型</label>
+    <select name="text_type"
+    	class="form-control" id="exampleFormControlSelect1">
+      <option value="問題">問題</option>
+      <option value="情報">情報</option>
+      <option value="心得">心得</option>
+      <option value="討論">討論</option>
+    </select>
+  </div>
 
-
-
-	<div align='center'>
-		<h3>發表新文章</h3>
-		<form action="<c:url value='/post'  />" method="post">
-			<table border='1'>
-				<tr>
-					<td>
-						<div>
-							
-							<select name="text_sub">
-								<option value="貓咪">貓咪</option>
-								<option value="狗狗">狗狗</option>
-								<option value="其他">其他</option>
-								<option value="PET">PET</option>
-							</select>
-							
-							 <select name="text_type">
-								<option value="問題">問題</option>
-								<option value="情報">情報</option>
-								<option value="心得">心得</option>
-								<option value="討論">討論</option>
-							</select>
-
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div>
-							<input type="text" name="title" placeholder="請輸入文章標題" required  
-									size="66"/>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div>
-							<textarea id="text" name="text" placeholder="それは、未来を取り戻す物語" required
-							           style="width:500px;height:500px;">
-							</textarea>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div align='center'>
-							<input type="submit" value="發文" />
-						</div>
-					</td>
-				</tr>
-			</table>
-		</form>
-		<div align='center'>
-			<a href="<c:url value='/' />">回首頁</a>
-		</div>
-	</div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">文章內容</label>
+    <textarea id="text" name="text" required
+    	 class="form-control" id="exampleFormControlTextarea1" placeholder="それは、未来を取り戻す物語。" ></textarea>
+  </div>
+  <input type="submit" value="發文" />
+  <br>
+  <a href="<c:url value='/' />">回首頁</a>
+</form>
+</div>
 
 
 
