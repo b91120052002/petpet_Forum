@@ -5,6 +5,9 @@
 <html lang="en">
 
 <head>
+<!-- 新增開始 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 新增結束 -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -171,20 +174,26 @@
 
 
 <div align='center'>
-<h2>論壇首頁</h2>
+<h2><a style="color:red" href="<c:url value='/post_Page'  />">發表新文章</a></h2>
 <hr>
-<table border='1'>
-<tr><th colspan="3"><th><a style="color:red" href="<c:url value='/post_Page'  />">發文</a></th>
-<tr><th>GP</th><th>文章</th><th>開串</th><th>回覆</th>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">子版</th>
+<th scope="col">類型</th>
+<th scope="col">文章列表</th>
+<th scope="col">更新時間</th>
+</tr>
+</thead>
 <c:forEach var='fb' items='${fbs1}'>
- <tr>
-     <td>${fb.gp}</td>
-     <td>
-     <div><a href="<c:url value='/text' />?textId=${fb.textId}"> ${fb.title}</a></div><p>${fb.text}</p>
-     </td>
-     <td>${fb.create_time}</td>
-     <td>${fb.reply_num}</td>
- </tr>    
+<tbody>
+<tr>
+<th scope="row">${fb.text_sub}</th>
+<td>${fb.text_type}</td>
+<td><div><a href="<c:url value='/text' />?textId=${fb.textId}"> ${fb.title}</a></div><p>${fb.text}</p></td>
+<td>${fb.create_time}</td>
+</tr>
+</tbody>     
 </c:forEach>
 </table>
 <hr>

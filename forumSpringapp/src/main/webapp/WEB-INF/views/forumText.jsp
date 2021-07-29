@@ -21,6 +21,9 @@
 		<hr>
 		<form action="<c:url value='/update' />" method="post">
 		<input type="hidden" name="textId" value="${fbs1.textId}" />
+			<table>
+			<tr>
+			<td>
 			<div>			  		
 				<select name="text_sub">
 					<option value="${fbs1.text_sub}" selected >${fbs1.text_sub}</option>
@@ -37,23 +40,46 @@
 					<option value="討論">討論</option>
 				</select>
 			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<div>
 				<input type="text" id="create_time" name="create_time"
 					value="${fbs1.create_time}">
 			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<div>
 				<input type="text" id="title" name="title" value="${fbs1.title}">
 			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<div>
 				<input type="text" id="text" name="text" value="${fbs1.text}">
 			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<div>
 				<button type="submit" onclick="updateText(${fbs1.textId})" >更新</button>
 				<input type="button" value="刪除" name="delete" onclick="deleteText(${fbs1.textId})">
 			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<div align='center'>
 				<a href="<c:url value='/' />">回首頁</a>
 			</div>
+			</td>
+			</tr>
+			</table>
 		</form>
 		<hr>
 	</div>
