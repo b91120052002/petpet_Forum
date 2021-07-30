@@ -7,6 +7,7 @@
 <head>
 <!-- 新增開始 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
 <!-- 新增結束 -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -166,16 +167,12 @@
 
 	</div>
 
-	<!----------------------------------------------NEW!!Strat!!-------------------------------------------->
+	<!----------------------------------------------NEW!!Strat!!-------------------------------------------->	
 
 <div align='center'>
 <h3>發表新文章</h3>
-<form action="<c:url value='/post'  />" method="post">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">文章標題</label>
-    <input type="text" name="title" required 
-    	class="form-control" id="exampleFormControlInput1" placeholder="請輸入文章標題">
-  </div>
+<form class="form-horizontal" action="<c:url value='/post' />" method="post">
+  
   <div class="form-group">
     <label for="exampleFormControlSelect1">請選子版</label>
     <select name="text_sub"
@@ -189,12 +186,18 @@
   <div class="form-group">
     <label for="exampleFormControlSelect1">請選類型</label>
     <select name="text_type"
-    	class="form-control" id="exampleFormControlSelect1">
+    	class="form-control" id="exampleFormControlSelect2">
       <option value="問題">問題</option>
       <option value="情報">情報</option>
       <option value="心得">心得</option>
       <option value="討論">討論</option>
     </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlInput1" >文章標題</label>
+    <input type="text" name="title" required 
+    	class="form-control" id="exampleFormControlInput1" placeholder="請輸入文章標題">
   </div>
 
   <div class="form-group">
@@ -207,7 +210,11 @@
   <a href="<c:url value='/' />">回首頁</a>
 </form>
 </div>
-
+<script>
+CKEDITOR.replace( 'text', {
+    customConfig: '/ckeditor_settings/config.js'
+} );
+</script>
 
 
 

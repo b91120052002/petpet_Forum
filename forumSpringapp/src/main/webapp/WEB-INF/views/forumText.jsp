@@ -7,6 +7,7 @@
 <head>
 <!-- 新增開始 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
 <!-- 新增結束 -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -230,7 +231,15 @@ function updateText(textId) {
 </form>
 </div>
 <script>
-$("#text").val("${fbs1.text}");
+
+//$("#text").val("${fbs1.text}");
+
+  $(document).ready(function() {
+    CKEDITOR.replace('text', {
+      //customConfig: './js/wysiwygconfig.js'
+   });
+    CKEDITOR.instances["text"].setData("${fbs1.text}");
+  });
 </script>
 
 

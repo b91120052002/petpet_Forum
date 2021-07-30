@@ -183,7 +183,7 @@
 <div align='center'>
 <h2><a style="color:red" href="<c:url value='/post_Page'  />">發表新文章</a></h2>
 <hr>
-<table class="table table-striped table-bordered table-condensed ">
+<table id="contentTable" class="table table-striped table-bordered table-condensed ">
 <thead>
 <tr>
 <th scope="col" style="width:80px;">子版</th>
